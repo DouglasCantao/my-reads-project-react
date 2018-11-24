@@ -11,7 +11,9 @@ module.exports = {
     devtool: 'inline-source-map',
 
     devServer: {
-        contentBase: './distdev'
+        contentBase: './distdev',
+        historyApiFallback: true,
+        disableHostCheck: true
     },
 
     output: {
@@ -24,17 +26,12 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/, exclude: /node_modules/,
-                loader: 'eslint-loader',
-                enforce: 'pre'
-            },
-
-            {
-                test: /\.js$/, exclude: /node_modules/,
                 use: [{
                     loader: 'babel-loader',
                     options: {
                         plugins: [
                             ['@babel/plugin-transform-react-jsx', {useBuiltIns: true}],
+                            ['@babel/plugin-proposal-class-properties', {useBuiltIns: true}],
                             ['@babel/plugin-proposal-object-rest-spread', {useBuiltIns: true}]
                         ]
                     }
