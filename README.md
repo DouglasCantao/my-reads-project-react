@@ -22,7 +22,13 @@ npm -v
 
 ### Installing
 
-Após clonar o repositório para sua máquina, execute a aplicação usando o seguinte comando:
+Após clonar o repositório para sua máquina, instale as dependências:
+
+```
+npm install
+```
+
+e execute a aplicação usando os seguintes comandos:
 
 
 ```
